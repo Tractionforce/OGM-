@@ -287,7 +287,7 @@ with tab_1_2:
 
 # Generate multi-sheet Excel file compliant with regulator expectations
 buffer = io.BytesIO()
-with pd.ExcelWriter(buffer, engine="xlsxwriter") as writer:
+with pd.ExcelWriter(buffer, engine='openpyxl') as writer:
     st.session_state.df_cell_commercial.to_excel(writer, sheet_name='Tableau_1_1', index=False)
     st.session_state.df_mgm_2_2_1.to_excel(writer, sheet_name='Tableau_2_2_1', index=False)
     st.session_state.df_cell_stables_3_5_1.to_excel(writer, sheet_name='Tableau_3_5_1', index=False)
